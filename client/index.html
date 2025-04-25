@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medi Track</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+    <!-- Sidebar -->
+    <div class="flex flex-no-wrap">
+      <!-- Mobile Sidebar -->
+      <div id="mobile-nav" class="fixed inset-0 bg-gray-800 bg-opacity-75 hidden z-50">
+        <div class="flex justify-end p-4">
+          <button id="close-mobile-nav" class="text-white text-xl">&times;</button>
+        </div>
+        <div class="p-4 bg-gray-900">
+          <div class="text-white text-center mb-4 text-2xl font-bold ">MediTrack Dashboard</div>
+          <ul class="space-y-4">
+            <li><a href="#" class="block text-white">Dashboard Overview</a></li>
+            <li><a href="#" class="block text-white">Create Program</a></li>
+            <li><a href="#" class="block text-white">Register Client</a></li>
+            <li><a href="#" class="block text-white">Enroll Client</a></li>
+            <li><a href="#" class="block text-white">Search Client</a></li>
+            <li><a href="#" class="block text-white">Client Profile</a></li>
+           
+            <li><a href=""  class="block text-white">
+              <div>
+                <button class="bg-blue-600 text-white px-4 py-2 rounded-md">Logout</button>
+              </div>
+            </a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Desktop Sidebar -->
+      <div class="w-64 bg-gray-900 text-white hidden  fixed h-full  lg:block ">
+        <div class="text-center p-6 text-2xl font-bold">MediTrack Dashboard</div>
+        <ul class="space-y-4 p-4">
+          <li><a href="#" class="block hover:bg-gray-700 p-2 rounded">Dashboard Overview</a></li>
+          <li><a href="#" class="block hover:bg-gray-700 p-2 rounded">Create Program</a></li>
+          <li><a href="#" class="block hover:bg-gray-700 p-2 rounded">Register client</a></li>
+          <li><a href="#" class="block hover:bg-gray-700 p-2 rounded">Enroll Client</a></li>
+          <li><a href="#" class="block hover:bg-gray-700 p-2 rounded">Search Client</a></li>
+          <li><a href="#" class="block hover:bg-gray-700 p-2 rounded">Client Profile</a></li>
+        
+           <li><a href=""  class="block text-white">
+              <div>
+                <button class="bg-blue-600 text-white px-4 py-2 rounded-md">Logout</button>
+              </div>
+            </a></li>
+        </ul>
+      </div>
+  
+      <!-- Main Content -->
+      <div class="flex-1 min-h-screen overflow-hidden ml-0 lg:ml-64 ">
+        <!-- Header -->
+        <div class="flex justify-between items-center bg-gray-900 shadow p-4">
+          <div class="md:hidden ">
+            <button id="open-mobile-nav" class="text-gray-600">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+              </svg>
+            </button>
+          </div>
+          <div class="text-2xl font-semibold text-white " id="greet" ></div>
+          <!-- Doctors Info -->
+           <div class="flex items-center space-x-4">
+            <!-- Profile -image -->
+           <img
+            src="/images/mobidoc.jpg" 
+            alt="Profile Photo"
+            class="w-10 h-10 rounded-full object-cover"
+            >
+           </div>
+          <!-- <div>
+            <button class="bg-blue-600 text-white px-4 py-2 rounded-md">Logout</button>
+          </div> -->
+        </div>
+  
+        <!-- Dashboard Overview Section -->
+        <div class="p-6">
+          <h2 class="text-2xl font-bold mb-4">Dashboard Overview</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Quick Links -->
+            <div class="bg-white shadow-lg rounded-lg p-6">
+              <h3 class="text-lg font-semibold mb-2">Quick Links</h3>
+              <ul class="space-y-2">
+                <li><a href="#" class="text-blue-600 hover:underline">Schedule an Appointment</a></li>
+                <li><a href="#" class="text-blue-600 hover:underline">View Messages</a></li>
+              </ul>
+            </div>
+            
+           
+            <!-- Upcoming Appointments -->
+            <div class="bg-white shadow-lg rounded-lg p-6">
+              <h3 class="text-lg font-semibold mb-2">Upcoming Appointments</h3>
+              <p class="text-gray-600">Next Appointment: <strong>Dr. Smith</strong></p>
+              <p>Date: 24th Nov, 2024 - 10:00 AM</p>
+              <button class="mt-4 bg-green-500 text-white px-4 py-2 rounded-md">Join Video Call</button>
+            </div>
+  
+             <!-- Schedule Appointment -->
+            <div>
+             <div class="bg-white shadow-lg rounded-lg p-6">
+              <h3 class="text-lg font-semibold mb-4">Schedule Appointment</h3>
+              <form action="#" method="POST">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div class="col-span-1">
+                    <label for="doctor" class="block text-sm font-medium text-gray-700">Doctor</label>
+                    <input type="text" id="doctor" name="doctor" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md" required>
+                  </div>
+                  <div class="col-span-1">
+                    <label for="appointment_date" class="block text-sm font-medium text-gray-700">Date</label>
+                    <input type="date" id="appointment_date" name="appointment_date" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md" required>
+                  </div>
+                  <div class="col-span-1">
+                    <label for="appointment_time" class="block text-sm font-medium text-gray-700">Time</label>
+                    <input type="time" id="appointment_time" name="appointment_time" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md" required>
+                  </div>
+                  <div class="col-span-1">
+                    <label for="status" class="block text-sm font-medium text-gray-700">Status</label>
+                    <select id="status" name="status" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md">
+                      <option value="confirmed">Confirmed</option>
+                      <option value="pending">Pending</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="mt-4 text-right">
+                  <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-md">Book Appointment</button>
+                </div>
+              </form>
+            </div>
+             </div>
+
+     <!-- Create Program View -->
+     <div id="createProgram" class="view hidden">
+        <h2 class="text-2xl font-bold mb-4">Create Health Program</h2>
+        <form class="bg-white p-6 rounded shadow max-w-lg">
+          <div class="mb-4">
+            <label class="block mb-2 font-medium">Program Name</label>
+            <input type="text" class="w-full border p-2 rounded" placeholder="e.g., TB, Malaria" required />
+          </div>
+          <div class="mb-4">
+            <label class="block mb-2 font-medium">Description</label>
+            <textarea class="w-full border p-2 rounded" rows="4" placeholder="Describe the program..."></textarea>
+          </div>
+          <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">Create</button>
+        </form>
+      </div>
+
+      <!-- Register Client View -->
+      <div id="registerClient" class="view hidden">
+        <h2 class="text-2xl font-bold mb-4">Register Client</h2>
+        <form class="bg-white p-6 rounded shadow max-w-lg">
+          <div class="mb-4">
+            <label class="block mb-2 font-medium">Full Name</label>
+            <input type="text" class="w-full border p-2 rounded" />
+          </div>
+          <div class="mb-4">
+            <label class="block mb-2 font-medium">Email</label>
+            <input type="email" class="w-full border p-2 rounded" />
+          </div>
+          <div class="mb-4">
+            <label class="block mb-2 font-medium">Phone</label>
+            <input type="text" class="w-full border p-2 rounded" />
+          </div>
+          <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded">Register</button>
+        </form>
+      </div>
+
+      <!-- Enroll Client View -->
+      <div id="enrollClient" class="view hidden">
+        <h2 class="text-2xl font-bold mb-4">Enroll Client</h2>
+        <form class="bg-white p-6 rounded shadow max-w-lg">
+          <div class="mb-4">
+            <label class="block mb-2 font-medium">Client ID</label>
+            <input type="text" class="w-full border p-2 rounded" />
+          </div>
+          <div class="mb-4">
+            <label class="block mb-2 font-medium">Program</label>
+            <select class="w-full border p-2 rounded">
+              <option>TB</option>
+              <option>Malaria</option>
+              <option>HIV</option>
+            </select>
+          </div>
+          <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded">Enroll</button>
+        </form>
+      </div>
+
+      <!-- Search Client View -->
+      <div id="searchClient" class="view hidden">
+        <h2 class="text-2xl font-bold mb-4">Search Client</h2>
+        <input type="text" placeholder="Search by name or ID..." class="border p-2 w-full rounded mb-4" />
+        <ul class="bg-white shadow rounded p-4">
+          <li class="py-2 border-b">Client A</li>
+          <li class="py-2 border-b">Client B</li>
+        </ul>
+      </div>
+
+      <!-- Client Profile View -->
+      <div id="clientProfile" class="view hidden">
+        <h2 class="text-2xl font-bold mb-4">Client Profile</h2>
+        <div class="bg-white shadow rounded p-6">
+          <p><strong>Name:</strong> Jane Doe</p>
+          <p><strong>Email:</strong> jane@example.com</p>
+          <p><strong>Phone:</strong> +123456789</p>
+          <p><strong>Enrolled Programs:</strong> TB, HIV</p>
+        </div>
+      </div>
+   
+  </div>
+           
+</div>
+  <script>
+    function showView(viewId) {
+      document.querySelectorAll('.view').forEach(v => v.classList.add('hidden'));
+      document.getElementById(viewId).classList.remove('hidden');
+    }
+
+    const mobileNav = document.getElementById('mobile-nav');
+     const openMobileNav = document.getElementById('open-mobile-nav');
+     const closeMobileNav = document.getElementById('close-mobile-nav');
+ 
+     openMobileNav.addEventListener('click', () => {
+       mobileNav.classList.remove('hidden');
+     });
+ 
+     closeMobileNav.addEventListener('click', () => {
+       mobileNav.classList.add('hidden');
+     });
+  </script>
+  </body>
+</html>
