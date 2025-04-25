@@ -81,33 +81,35 @@
       <!-- Register Client View -->
       <div id="registerClient" class="view hidden">
         <h2 class="text-2xl font-bold mb-4">Register Client</h2>
-        <form class="bg-white p-6 rounded shadow max-w-lg">
+        <form class="bg-white p-6 rounded shadow max-w-lg" id="registerUser">
           <div class="mb-4">
-            <label class="block mb-2 font-medium">First Name</label>
-            <input type="text" class="w-full border p-2 rounded" />
+            <label for="first_name" class="block mb-2 font-medium">First Name</label>
+            <input type="text" class="w-full border p-2 rounded" id="first_name" name="first_name" required />
           </div>
           <div class="mb-4">
-            <label class="block mb-2 font-medium">Last Name</label>
-            <input type="text" class="w-full border p-2 rounded" />
+            <label for="last_name" class="block mb-2 font-medium">Last Name</label>
+            <input type="text" class="w-full border p-2 rounded" id="last_name" name="last_name" required />
           </div>
           <div class="mb-4">
-            <label class="block mb-2 font-medium">Gender</label>
-            <input type="text" class="w-full border p-2 rounded" />
+            <label for="gender" class="block mb-2 font-medium">Gender</label>
+            <input type="text" class="w-full border p-2 rounded" id="gender" name="gender" required />
           </div>
-           <div class="mb-4">
-            <label class="block mb-2 font-medium">Full Name</label>
-            <input type="text" class="w-full border p-2 rounded" />
+    
+          <div class="mb-4">
+            <label for="dob" class="block mb-2 font-medium">Date of Birth</label>
+            <input type="date" class="w-full border p-2 rounded" id="date_of_birth" name="dob" required />
           </div>
           <div class="mb-4">
-            <label class="block mb-2 font-medium">Email</label>
-            <input type="email" class="w-full border p-2 rounded" />
+            <label for="email" class="block mb-2 font-medium">Email</label>
+            <input type="email" class="w-full border p-2 rounded" id="email" name="email" required />
           </div>
           <div class="mb-4">
-            <label class="block mb-2 font-medium">Phone</label>
-            <input type="text" class="w-full border p-2 rounded" />
+            <label for="phone" class="block mb-2 font-medium">Phone</label>
+            <input type="tel" class="w-full border p-2 rounded" id="phone" name="phone" required />
           </div>
           <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded">Register</button>
         </form>
+        
       </div>
 
       <!-- Enroll Client View -->
@@ -154,7 +156,7 @@
   </div>
 
   <script>
-  // Existing showView function
+
   function showView(viewId) {
     document.querySelectorAll('.view').forEach(v => v.classList.add('hidden'));
     document.getElementById(viewId).classList.remove('hidden');
@@ -183,5 +185,6 @@
   });
 </script>
 <script src="/services/createProgram.js"></script>
+<script src="/services/createClient.js"></script>
 </body>
 </html>

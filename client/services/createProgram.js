@@ -18,14 +18,14 @@ document.getElementById('createProgram').addEventListener('submit', async(event)
 
     try {
         // Show loading overlay
-        Swal.fire({
-            title: 'Creating Program...',
-            allowOutsideClick: false,
-            showConfirmButton: false,
-            willOpen: () => {
-                Swal.showLoading();
-            }
-        });
+        // Swal.fire({
+        //     title: 'Creating Program...',
+        //     allowOutsideClick: false,
+        //     showConfirmButton: false,
+        //     willOpen: () => {
+        //         Swal.showLoading();
+        //     }
+        // });
 
         const response = await fetch('http://localhost:4000/program/create-program', {
             method: 'POST',
