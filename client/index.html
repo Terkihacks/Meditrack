@@ -1,143 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medi Track</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#2563eb" />
+  <title>Health Info System Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 font-sans leading-normal tracking-normal">
-    <!-- Sidebar -->
-    <div class="flex flex-no-wrap">
-      <!-- Mobile Sidebar -->
-      <div id="mobile-nav" class="fixed inset-0 bg-gray-800 bg-opacity-75 hidden z-50">
-        <div class="flex justify-end p-4">
-          <button id="close-mobile-nav" class="text-white text-xl">&times;</button>
-        </div>
-        <div class="p-4 bg-gray-900">
-          <div class="text-white text-center mb-4 text-2xl font-bold ">MediTrack Dashboard</div>
-          <ul class="space-y-4">
-            <li><a href="#" class="block text-white">Dashboard Overview</a></li>
-            <li><a href="#" class="block text-white">Create Program</a></li>
-            <li><a href="#" class="block text-white">Register Client</a></li>
-            <li><a href="#" class="block text-white">Enroll Client</a></li>
-            <li><a href="#" class="block text-white">Search Client</a></li>
-            <li><a href="#" class="block text-white">Client Profile</a></li>
-           
-            <li><a href=""  class="block text-white">
-              <div>
-                <button class="bg-blue-600 text-white px-4 py-2 rounded-md">Logout</button>
-              </div>
-            </a></li>
-          </ul>
-        </div>
-      </div>
-      
-      <!-- Desktop Sidebar -->
-      <div class="w-64 bg-gray-900 text-white hidden  fixed h-full  lg:block ">
-        <div class="text-center p-6 text-2xl font-bold">MediTrack Dashboard</div>
-        <ul class="space-y-4 p-4">
-          <li><button onclick="showView('dashboard')" class="block hover:bg-gray-700 p-2 rounded">Dashboard Overview</button></li>
-            <li><button onclick="showView('createProgram')" class="block hover:bg-gray-700 p-2 rounded">Create Program</button></li>
-          <!-- <li><a href="#" class="block hover:bg-gray-700 p-2 rounded">Create Program</a></li> -->
-          <li><a href="#" class="block hover:bg-gray-700 p-2 rounded">Register client</a></li>
-          <li><a href="#" class="block hover:bg-gray-700 p-2 rounded">Enroll Client</a></li>
-          <li><a href="#" class="block hover:bg-gray-700 p-2 rounded">Search Client</a></li>
-          <li><a href="#" class="block hover:bg-gray-700 p-2 rounded">Client Profile</a></li>
-        
-           <li><a href=""  class="block text-white">
-              <div>
-                <button class="bg-blue-600 text-white px-4 py-2 rounded-md">Logout</button>
-              </div>
-            </a></li>
-        </ul>
-      </div>
-  
-      <!-- Main Content -->
-      <div class="flex-1 min-h-screen overflow-hidden ml-0 lg:ml-64 ">
-        <!-- Header -->
-        <div class="flex justify-between items-center bg-gray-900 shadow p-4">
-          <div class="md:hidden ">
-            <button id="open-mobile-nav" class="text-gray-600">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-              </svg>
-            </button>
-          </div>
-          <div class="text-2xl font-semibold text-white " id="greet" ></div>
-          <!-- Doctors Info -->
-           <div class="flex items-center space-x-4">
-            <!-- Profile -image -->
-           <img
-            src="/images/mobidoc.jpg" 
-            alt="Profile Photo"
-            class="w-10 h-10 rounded-full object-cover"
-            >
-           </div>
-          <!-- <div>
-            <button class="bg-blue-600 text-white px-4 py-2 rounded-md">Logout</button>
-          </div> -->
-        </div>
-  
-        <!-- Dashboard Overview Section -->
-        <div class="p-6">
-          <h2 class="text-2xl font-bold mb-4">Dashboard Overview</h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Quick Links -->
-            <div class="bg-white shadow-lg rounded-lg p-6">
-              <h3 class="text-lg font-semibold mb-2">Quick Links</h3>
-              <ul class="space-y-2">
-                <li><a href="#" class="text-blue-600 hover:underline">Schedule an Appointment</a></li>
-                <li><a href="#" class="text-blue-600 hover:underline">View Messages</a></li>
-              </ul>
-            </div>
-            
-           
-            <!-- Upcoming Appointments -->
-            <div class="bg-white shadow-lg rounded-lg p-6">
-              <h3 class="text-lg font-semibold mb-2">Upcoming Appointments</h3>
-              <p class="text-gray-600">Next Appointment: <strong>Dr. Smith</strong></p>
-              <p>Date: 24th Nov, 2024 - 10:00 AM</p>
-              <button class="mt-4 bg-green-500 text-white px-4 py-2 rounded-md">Join Video Call</button>
-            </div>
-  
-             <!-- Schedule Appointment -->
-            <div>
-             <div class="bg-white shadow-lg rounded-lg p-6">
-              <h3 class="text-lg font-semibold mb-4">Schedule Appointment</h3>
-              <form action="#" method="POST">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div class="col-span-1">
-                    <label for="doctor" class="block text-sm font-medium text-gray-700">Doctor</label>
-                    <input type="text" id="doctor" name="doctor" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md" required>
-                  </div>
-                  <div class="col-span-1">
-                    <label for="appointment_date" class="block text-sm font-medium text-gray-700">Date</label>
-                    <input type="date" id="appointment_date" name="appointment_date" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md" required>
-                  </div>
-                  <div class="col-span-1">
-                    <label for="appointment_time" class="block text-sm font-medium text-gray-700">Time</label>
-                    <input type="time" id="appointment_time" name="appointment_time" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md" required>
-                  </div>
-                  <div class="col-span-1">
-                    <label for="status" class="block text-sm font-medium text-gray-700">Status</label>
-                    <select id="status" name="status" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md">
-                      <option value="confirmed">Confirmed</option>
-                      <option value="pending">Pending</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="mt-4 text-right">
-                  <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-md">Book Appointment</button>
-                </div>
-              </form>
-            </div>
-             </div>
+<body class="bg-gray-100 font-sans">
 
-     <!-- Create Program View -->
-     <div id="createProgram" class="view hidden">
-        <h2 class="text-2xl font-bold mb-4">Create Health Program</h2>
-        <form class="bg-white p-6 rounded shadow max-w-lg">
+  <!-- Navbar -->
+  <nav class="bg-blue-600 text-white px-6 py-3 shadow">
+  <div class="flex justify-between items-center">
+    <h1 class="text-xl font-bold">Meditrack</h1>
+    <button id="mobile-menu-button" class="lg:hidden">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+  <div class="flex flex-col lg:flex-row">
+  <!-- Sidebar for desktop -->
+  <aside class="hidden lg:block w-64 bg-white min-h-screen shadow-md p-4 space-y-4">
+    <button onclick="showView('dashboard')" class="block text-left w-full hover:text-blue-600">🏠 Dashboard</button>
+    <button onclick="showView('createProgram')" class="block text-left w-full hover:text-blue-600">➕ Create Program</button>
+    <button onclick="showView('registerClient')" class="block text-left w-full hover:text-blue-600">🧑 Register Client</button>
+    <button onclick="showView('enrollClient')" class="block text-left w-full hover:text-blue-600">📋 Enroll Client</button>
+    <button onclick="showView('searchClient')" class="block text-left w-full hover:text-blue-600">🔍 Search Client</button>
+    <button onclick="showView('clientProfile')" class="block text-left w-full hover:text-blue-600">👤 Client Profile</button>
+  </aside>
+
+  <!-- Mobile sidebar -->
+  <div id="mobile-sidebar" class="lg:hidden fixed inset-0 bg-gray-800 bg-opacity-75 z-50 hidden">
+    <div class="bg-white w-64 h-full p-4 space-y-4">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="font-bold">Menu</h2>
+        <button id="close-mobile-menu" class="text-gray-500">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <!-- Copy the same buttons from desktop sidebar -->
+      <button onclick="showView('dashboard')" class="block text-left w-full hover:text-blue-600">🏠 Dashboard</button>
+      <button onclick="showView('createProgram')" class="block text-left w-full hover:text-blue-600">➕ Create Program</button>
+      <button onclick="showView('registerClient')" class="block text-left w-full hover:text-blue-600">🧑 Register Client</button>
+      <button onclick="showView('enrollClient')" class="block text-left w-full hover:text-blue-600">📋 Enroll Client</button>
+      <button onclick="showView('searchClient')" class="block text-left w-full hover:text-blue-600">🔍 Search Client</button>
+      <button onclick="showView('clientProfile')" class="block text-left w-full hover:text-blue-600">👤 Client Profile</button>
+    </div>
+  </div>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-4 lg:p-6 w-full">
+      <!-- Dashboard View -->
+      <div id="dashboard" class="view">
+        <h2 class="text-2xl font-bold mb-4">Dashboard</h2>
+        <p>Welcome to the Health Information System. Use the sidebar to navigate.</p>
+      </div>
+
+      <!-- Create Program View -->
+      <div id="createProgram" class="view hidden">
+        <h2 class="text-xl lg:text-2xl font-bold mb-4">Create Health Program</h2>
+        <form class="bg-white p-4 lg:p-6 rounded shadow w-full lg:max-w-lg">
           <div class="mb-4">
             <label class="block mb-2 font-medium">Program Name</label>
             <input type="text" class="w-full border p-2 rounded" placeholder="e.g., TB, Malaria" required />
@@ -155,6 +82,18 @@
         <h2 class="text-2xl font-bold mb-4">Register Client</h2>
         <form class="bg-white p-6 rounded shadow max-w-lg">
           <div class="mb-4">
+            <label class="block mb-2 font-medium">First Name</label>
+            <input type="text" class="w-full border p-2 rounded" />
+          </div>
+          <div class="mb-4">
+            <label class="block mb-2 font-medium">Last Name</label>
+            <input type="text" class="w-full border p-2 rounded" />
+          </div>
+          <div class="mb-4">
+            <label class="block mb-2 font-medium">Gender</label>
+            <input type="text" class="w-full border p-2 rounded" />
+          </div>
+           <div class="mb-4">
             <label class="block mb-2 font-medium">Full Name</label>
             <input type="text" class="w-full border p-2 rounded" />
           </div>
@@ -210,27 +149,37 @@
           <p><strong>Enrolled Programs:</strong> TB, HIV</p>
         </div>
       </div>
-   
+    </main>
   </div>
-           
-</div>
-  <script>
-    function showView(viewId) {
-      document.querySelectorAll('.view').forEach(v => v.classList.add('hidden'));
-      document.getElementById(viewId).classList.remove('hidden');
-    }
 
-    const mobileNav = document.getElementById('mobile-nav');
-     const openMobileNav = document.getElementById('open-mobile-nav');
-     const closeMobileNav = document.getElementById('close-mobile-nav');
- 
-     openMobileNav.addEventListener('click', () => {
-       mobileNav.classList.remove('hidden');
-     });
- 
-     closeMobileNav.addEventListener('click', () => {
-       mobileNav.classList.add('hidden');
-     });
-  </script>
-  </body>
+  <script>
+  // Existing showView function
+  function showView(viewId) {
+    document.querySelectorAll('.view').forEach(v => v.classList.add('hidden'));
+    document.getElementById(viewId).classList.remove('hidden');
+    // Close mobile menu when view changes
+    document.getElementById('mobile-sidebar').classList.add('hidden');
+  }
+
+  // Mobile menu functionality
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const closeMobileMenu = document.getElementById('close-mobile-menu');
+  const mobileSidebar = document.getElementById('mobile-sidebar');
+
+  mobileMenuButton.addEventListener('click', () => {
+    mobileSidebar.classList.remove('hidden');
+  });
+
+  closeMobileMenu.addEventListener('click', () => {
+    mobileSidebar.classList.add('hidden');
+  });
+
+  // Close mobile menu when clicking outside
+  mobileSidebar.addEventListener('click', (e) => {
+    if (e.target === mobileSidebar) {
+      mobileSidebar.classList.add('hidden');
+    }
+  });
+</script>
+</body>
 </html>
