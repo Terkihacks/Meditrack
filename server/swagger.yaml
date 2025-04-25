@@ -1,0 +1,110 @@
+openapi: 3.0.0
+info:
+  title: MediTrack API
+  description: API for managing medical tracking system
+  version: 1.0.0
+servers:
+  - url: http://localhost:4500
+    description: Development server
+
+paths:
+  /api/doctor:
+    get:
+      summary: Get all doctors
+      responses:
+        200:
+          description: List of all doctors
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Doctor'
+    post:
+      summary: Create a new doctor
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Doctor'
+      responses:
+        201:
+          description: Doctor created successfully
+
+  /api/program:
+    get:
+      summary: Get all programs
+      responses:
+        200:
+          description: List of all programs
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Program'
+    post:
+      summary: Create a new program
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Program'
+      responses:
+        201:
+          description: Program created successfully
+
+  /api/enrollment:
+    get:
+      summary: Get all enrollments
+      responses:
+        200:
+          description: List of all enrollments
+    post:
+      summary: Create new enrollment
+      responses:
+        201:
+          description: Enrollment created successfully
+
+  /api/client:
+    get:
+      summary: Get all clients
+      responses:
+        200:
+          description: List of all clients
+    post:
+      summary: Create new client
+      responses:
+        201:
+          description: Client created successfully
+
+components:
+  schemas:
+    Doctor:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        specialization:
+          type: string
+        email:
+          type: string
+
+    Program:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        duration:
+          type: string
+
+# Don't forget to add this to your app.js:
+# app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
