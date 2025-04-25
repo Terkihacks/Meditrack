@@ -27,7 +27,15 @@ app.use('/program', programRoute);
 app.use('/enrollment', enrollmentRoute);
 app.use('/client', clientRoute);
 
+app.use(express.static(path.join(__dirname, '../client')));
+
+app.get('/',(request,response) =>{
+    response.sendFile(path.join(__dirname,'../client/index.html'));
+  })
+  
 app.listen(process.env.PORT || 4500, () => {
     console.log(`Server running on port ${process.env.PORT || 4500}`);
     console.log('Medi Track API Docs available at http://localhost:4500/api-docs');
 });
+
+// http://localhost:4000/program/create-program

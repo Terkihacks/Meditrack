@@ -6,6 +6,7 @@
   <meta name="theme-color" content="#2563eb" />
   <title>Health Info System Dashboard</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body class="bg-gray-100 font-sans">
 
@@ -67,11 +68,11 @@
         <form class="bg-white p-4 lg:p-6 rounded shadow w-full lg:max-w-lg">
           <div class="mb-4">
             <label class="block mb-2 font-medium">Program Name</label>
-            <input type="text" class="w-full border p-2 rounded" placeholder="e.g., TB, Malaria" required />
+            <input type="text" id = "name" class="w-full border p-2 rounded" placeholder="e.g., TB, Malaria" required />
           </div>
           <div class="mb-4">
             <label class="block mb-2 font-medium">Description</label>
-            <textarea class="w-full border p-2 rounded" rows="4" placeholder="Describe the program..."></textarea>
+            <textarea id = "description" class="w-full border p-2 rounded" rows="4" placeholder="Describe the program..."></textarea>
           </div>
           <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">Create</button>
         </form>
@@ -181,5 +182,6 @@
     }
   });
 </script>
+<script src="/services/createProgram.js"></script>
 </body>
 </html>
