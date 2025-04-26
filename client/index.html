@@ -135,12 +135,33 @@
       <!-- Search Client View -->
       <div id="searchClient" class="view hidden">
         <h2 class="text-2xl font-bold mb-4">Search Client</h2>
-        <input type="text" placeholder="Search by name or ID..." class="border p-2 w-full rounded mb-4" />
-        <ul class="bg-white shadow rounded p-4">
-          <li class="py-2 border-b">Client A</li>
-          <li class="py-2 border-b">Client B</li>
-        </ul>
-      </div>
+        <form id="searchForm" class="mb-4">
+            <div class="flex gap-2">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="Search by name, email or ID..." 
+                    class="border p-2 flex-1 rounded" 
+                    required
+                />
+                <button 
+                    type="submit" 
+                    class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+                >
+                    Search
+                </button>
+            </div>
+        </form>
+
+        <div id="searchResults" class="mt-4">
+            <!-- Results will be dynamically populated here -->
+        </div>
+
+        <!-- Loading spinner (hidden by default) -->
+        <div id="searchLoading" class="hidden text-center py-4">
+            <div class="inline-block animate-spin rounded-full h-8 w-8 border-4 border-blue-500 border-t-transparent"></div>
+        </div>
+    </div>
 
       <!-- Client Profile View -->
       <div id="clientProfile" class="view hidden">
@@ -186,5 +207,6 @@
 </script>
 <script src="/services/createProgram.js"></script>
 <script src="/services/createClient.js"></script>
+<script src="/services/searchClient.js"></script>
 </body>
 </html>

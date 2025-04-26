@@ -43,3 +43,4 @@ document.getElementById('registerUser').addEventListener('submit',async(event) =
     console.error('Error creating client:', error);
   }  
 })
+
