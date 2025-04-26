@@ -115,18 +115,14 @@
       <!-- Enroll Client View -->
       <div id="enrollClient" class="view hidden">
         <h2 class="text-2xl font-bold mb-4">Enroll Client</h2>
-        <form class="bg-white p-6 rounded shadow max-w-lg">
+        <form id="enrollUser" class="bg-white p-6 rounded shadow max-w-lg">
           <div class="mb-4">
             <label class="block mb-2 font-medium">Client ID</label>
-            <input type="text" class="w-full border p-2 rounded" />
+            <input id="clientid" type="text" class="w-full border p-2 rounded" />
           </div>
           <div class="mb-4">
             <label class="block mb-2 font-medium">Program</label>
-            <select class="w-full border p-2 rounded">
-              <option>TB</option>
-              <option>Malaria</option>
-              <option>HIV</option>
-            </select>
+            <input id="program" type="text" class="w-full border p-2 rounded" placeholder="e.g., TB, Malaria" />
           </div>
           <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded">Enroll</button>
         </form>
@@ -208,5 +204,6 @@
 <script src="/services/createProgram.js"></script>
 <script src="/services/createClient.js"></script>
 <script src="/services/searchClient.js"></script>
+<script src="/services/enrollment.js"></script>
 </body>
 </html>
