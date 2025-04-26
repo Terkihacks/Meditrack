@@ -30,7 +30,7 @@ app.use('/client', clientRoute);
 app.use(express.static(path.join(__dirname, '../client')));
 
 app.get('/',(request,response) =>{
-    response.sendFile(path.join(__dirname,'../client/index.html'));
+    response.sendFile(path.join(__dirname,'../client/auth.html'));
   })
   
 app.listen(process.env.PORT || 4500, () => {

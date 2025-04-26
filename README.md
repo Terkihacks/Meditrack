@@ -1,3 +1,38 @@
+
+# 🏥 Meditrack - Healthcare Management System
+
+## 🎯 Overview
+Meditrack streamlines healthcare information management with a modern web application.
+
+## 🏗️ Project Structure
+```
+meditrack/
+├── client/                # Frontend application
+│   ├── services/         # API integration
+└── server/              # Backend application
+    ├── config/         # Configuration files
+    ├── controllers/    # Request handlers
+    ├── routes/         # API routes
+    └── README.md       # Backend documentation
+```
+
+## 🚀 Quick Start
+
+```bash
+# Clone repository
+git clone https://github.com/Terkihacks/meditrack.git
+cd meditrack
+
+# Install backend dependencies
+cd server
+npm install
+
+# Install frontend dependencies
+cd ../client
+npm install
+```
+
+
 # 🏥 Meditrack Server
 
 ## 🚀 Overview
@@ -56,7 +91,7 @@ CREATE TABLE clients (
 
 ## 🚀 Running the Server
 ```bash
-npm start
+nodemon app.js
 ```
 # 💻 Meditrack Client
 
@@ -87,7 +122,7 @@ npm install
 - Register new clients
 - Search client database
 - View client profiles
-- Edit client information
+
 
 ### 📋 Program Management
 - Create health programs
@@ -100,7 +135,7 @@ client/
 ├── services/          # API integration
 │   ├── createClient.js
 │   ├── searchClient.js
-│   └── config.js
+│   └── createProgram.js
 ├── styles/           # CSS styles
 ├── views/           # HTML templates
 └── index.html       # Main entry point
@@ -108,50 +143,10 @@ client/
 
 ## 🚀 Development
 ```bash
-# Using VS Code Live Server
-code index.html
-# Right-click -> Open with Live Server
+# Using VS Code run the code in the backend
+nodemon app.js
+
 ```
-# 🏥 Meditrack - Healthcare Management System
-
-## 🎯 Overview
-Meditrack streamlines healthcare information management with a modern web application.
-
-## 🏗️ Project Structure
-```
-meditrack/
-├── client/                # Frontend application
-│   ├── services/         # API integration
-│   ├── styles/          # CSS styles
-│   ├── views/           # HTML templates
-│   └── README.md        # Frontend documentation
-└── server/              # Backend application
-    ├── config/         # Configuration files
-    ├── controllers/    # Request handlers
-    ├── routes/         # API routes
-    ├── models/         # Database models
-    └── README.md       # Backend documentation
-```
-
-## 🚀 Quick Start
-
-```bash
-# Clone repository
-git clone https://github.com/yourusername/meditrack.git
-cd meditrack
-
-# Install backend dependencies
-cd server
-npm install
-
-# Install frontend dependencies
-cd ../client
-npm install
-```
-
-## 📚 Documentation
-- [Server Documentation](server/README.md)
-- [Client Documentation](client/README.md)
 
 ## 🤝 Contributing
 1. Fork repository
