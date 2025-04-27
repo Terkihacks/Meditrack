@@ -73,8 +73,8 @@ exports.loginDoctor = async (req, res) => {
             doctor: {
                 id: doctor.id,
                 name: doctor.name,
-                // email: doctor.email,
-                // created_at: doctor.created_at
+                email: doctor.email,
+                created_at: doctor.created_at
             }
         });
 

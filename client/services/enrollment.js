@@ -1,8 +1,6 @@
-ddocument.getElementById('enrollUser').addEventListener('submit',async(event) =>{
+document.getElementById('enrollUser').addEventListener('submit',async(event) =>{
     event.preventDefault();
     
-    enrollForm?.addEventListener('submit', async (event) => {
-        event.preventDefault();
 
         const clientId = document.getElementById('clientid').value;
         const programName = document.getElementById('program').value;
@@ -22,8 +20,9 @@ ddocument.getElementById('enrollUser').addEventListener('submit',async(event) =>
             if (!token) {
                 throw new Error('Authentication required');
             }
+            console.log(localStorage.getItem('token'));
 
-            const response = await fetch('http://localhost:4000/enrollment/create-enrollment', {
+            const response = await fetch('http://localhost:4000/enrollment/create', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -36,6 +35,7 @@ ddocument.getElementById('enrollUser').addEventListener('submit',async(event) =>
             });
 
             const data = await response.json();
+            console.log(data);
 
             if (!response.ok) {
                 throw new Error(data.message || 'Failed to enroll client');
@@ -49,10 +49,10 @@ ddocument.getElementById('enrollUser').addEventListener('submit',async(event) =>
             });
 
             // Reset form
-            enrollForm.reset();
+            // enrollForm.reset();
 
         } catch (error) {
-            console.error('Enrollment error:', error);
+            console.log('Enrollment error:', error);
             Swal.fire({
                 icon: 'error',
                 title: 'Enrollment Failed',
@@ -60,4 +60,3 @@ ddocument.getElementById('enrollUser').addEventListener('submit',async(event) =>
             });
         }
     });
-});
