@@ -64,7 +64,9 @@ exports.loginDoctor = async (req, res) => {
                 email: doctor.email
             },
             process.env.JWT_SECRET_KEY,
-            { expiresIn: '1h' }
+            { 
+                expiresIn: '1h'
+            }
         );
 
         res.status(200).json({

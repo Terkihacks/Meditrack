@@ -3,7 +3,7 @@ const db = require('../config/dbSetup');
 exports.createEnrollment = async (req, res) => {
     try {
         const { client_id, program_name } = req.body;
-        const doctor_id = req.user.id; // from auth middleware
+        const doctor_id = req.user.id; 
 
         // Validate inputs
         if (!client_id || !program_name) {
@@ -38,7 +38,7 @@ exports.createEnrollment = async (req, res) => {
 
         res.status(201).json({
             message: 'Enrollment created successfully',
-            enrollment_id: result.insertId
+            data:result
         });
 
     } catch (error) {

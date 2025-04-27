@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const {createEnrollment} = require('../controllers/enrollmentController');
-const verifyDoc = require('../middleware/doctorMiddleware');
+const {verifyToken} = require('../middleware/doctorMiddleware');
 
-router.post('/create',verifyDoc,createEnrollment);
+router.post('/create',verifyToken,createEnrollment);
 
 module.exports = router;

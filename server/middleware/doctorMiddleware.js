@@ -1,15 +1,20 @@
 const jwt = require('jsonwebtoken');
 
-const verifyDoc = (req,res,next) =>{
-    const authHeaders = req.headers['authorization'];
-    const token = authHeaders && authHeaders.split(' ')[1];
-    if(!token) return res.status(403).json({message: 'Token required'});
-    jwt.verify(token,process.env.SECRET_KEY,(err,user) =>{
-        if(err) return res.status(403).json({message:'Invalid Token'});
-        req.user = user
+exports.verifyToken = (req, res, next) => {
+    try {
+        const authHeader = req.headers.authorization;
+        
+        if (!authHeader || !authHeader.startsWith('Bearer ')) {
+            return res.status(401).json({ message: 'No token provided' });
+        }
+
+        const token = authHeader.split(' ')[1];
+        
+        const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
+        req.user = decoded;
         next();
-    });
-
-}
-
-module.exports = verifyDoc;
+    } catch (error) {
+        console.error('Token verification failed:', error);
+        return res.status(401).json({ message: 'Invalid token' });
+    }
+};

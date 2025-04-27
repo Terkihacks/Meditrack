@@ -36,6 +36,7 @@ document.getElementById('enrollUser').addEventListener('submit',async(event) =>{
 
             const data = await response.json();
             console.log(data);
+            console.log(response)
 
             if (!response.ok) {
                 throw new Error(data.message || 'Failed to enroll client');
@@ -49,7 +50,7 @@ document.getElementById('enrollUser').addEventListener('submit',async(event) =>{
             });
 
             // Reset form
-            // enrollForm.reset();
+            enrollUser.reset();
 
         } catch (error) {
             console.log('Enrollment error:', error);

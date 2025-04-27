@@ -95,7 +95,6 @@ confirmButtonText: 'OK'
     confirmButtonText: 'OK' 
   });
 window.location.href = 'dashboardpage.html';
-
  
 }
 catch(error){
