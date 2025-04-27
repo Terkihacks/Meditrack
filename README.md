@@ -129,6 +129,19 @@ npm install
 - Enroll clients
 - Track participation
 
+  ## 🎥 Demo & Prototype
+### Video Walkthrough
+[![Meditrack Demo](https://img.youtube.com/vi/_21Es9l7F7w/0.jpg)](https://www.youtube.com/watch?v=_21Es9l7F7w)
+
+Watch our complete system walkthrough and prototype demonstration on [YouTube](https://www.youtube.com/watch?v=_21Es9l7F7w).
+
+### Features Demonstrated in Video
+- 🔐 Doctor Authentication System
+- 👥 Client Management Interface
+- 🔍 Search Functionality
+- 📋 Program Creation & Management
+- ✅ Client Enrollment Process
+
 ## 📁 Project Structure
 ```
 client/
