@@ -88,13 +88,16 @@ confirmButtonText: 'OK'
       
    }
        
-  Swal.fire({
+   Swal.fire({
     title: 'Success!',
     text: 'Logged in successfully.',
     icon: 'success',
-    confirmButtonText: 'OK' 
+    confirmButtonText: 'OK'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      window.location.href = 'dashboardpage.html';
+    }
   });
-window.location.href = 'dashboardpage.html';
  
 }
 catch(error){
