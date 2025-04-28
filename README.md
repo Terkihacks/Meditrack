@@ -86,7 +86,8 @@ CREATE TABLE clients (
 |--------|----------|-------------|
 | POST | `/client/create-client` | Create new client |
 | GET | `/client/search` | Search clients |
-| GET | `/client/:clientId` | Get client profile |
+| GET | `/client/profile/:clientId` | Get client profile |
+
 
 ## 🚀 Running the Server
 ```bash
