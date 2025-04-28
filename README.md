@@ -13,7 +13,6 @@ meditrack/
     ├── config/         # Configuration files
     ├── controllers/    # Request handlers
     ├── routes/         # API routes
-    └── README.md       # Backend documentation
 ```
 
 ## 🚀 Quick Start
